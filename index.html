@@ -20,8 +20,108 @@
     <script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
   </head>
   <body>
+    <div class="load-container">
+    <div id="load-logo">
+    <svg
+          id="my-svg"
+          width="150"
+          viewBox="0 0 371 448"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M232.143 159.894C232.143 59.8667 232.415 7.20792 232.931 7.20792C234.939 7.20792 250.252 12.5951 259.083 16.4081C320.124 42.7645 362.471 100.743 369.356 167.383C370.533 178.783 369.867 204.18 368.118 214.51C362.203 249.464 346.355 282.921 323.837 307.995L319.72 312.58H232.143V159.894ZM308.867 268.329C336.272 227.594 341.656 175.348 323.131 129.911C315.53 111.267 304.684 94.8582 290.764 80.945C283.3 73.4842 270.46 63.02 268.771 63.02C268.308 63.02 268.022 103.842 268.022 169.876V276.731L303.503 276.302L308.867 268.329Z"
+          />
+          <path
+            d="M103.775 409.852H168.358V1.79872L176.287 1.23122C180.648 0.919099 188.721 0.923539 194.226 1.24111L204.237 1.81851V446.529H103.775V409.852Z"
+          />
+          <path
+            d="M44.6806 304.806C0.689495 252.097 -10.9776 181.591 13.8031 118.21C27.0834 84.2432 51.4479 53.8401 82.2478 32.8016C97.4344 22.4281 117.431 13.0304 134.671 8.16489L140.452 6.53348V312.58H103.775V183.415H36.6289L37.1716 191.587C39.1199 220.923 47.4126 246.244 62.2952 268.299L66.3015 274.237V312.58H51.1686L44.6806 304.806ZM103.775 104.879C103.775 81.418 103.528 62.2227 103.227 62.2227C101.841 62.2227 87.5005 73.9471 81.1311 80.2879C68.5891 92.7736 59.3796 105.857 51.4745 122.42C47.8074 130.103 42.3821 144.641 42.3821 146.783C42.3821 147.242 54.3804 147.535 73.0787 147.535H103.775V104.879Z"
+           
+          />
+          <path
+            d="M103.775 340.486H140.452V377.162H103.775V340.486Z"
+          />
+          <path
+            d="M232.143 340.486H268.022V377.162H232.143V340.486Z"
+          />
+          <path
+            d="M232.143 159.894C232.143 59.8667 232.415 7.20792 232.931 7.20792C234.939 7.20792 250.252 12.5951 259.083 16.4081C320.124 42.7645 362.471 100.743 369.356 167.383C370.533 178.783 369.867 204.18 368.118 214.51C362.203 249.464 346.355 282.921 323.837 307.995L319.72 312.58H232.143V159.894ZM308.867 268.329C336.272 227.594 341.656 175.348 323.131 129.911C315.53 111.267 304.684 94.8582 290.764 80.945C283.3 73.4842 270.46 63.02 268.771 63.02C268.308 63.02 268.022 103.842 268.022 169.876V276.731L303.503 276.302L308.867 268.329Z"
+          />
+          <path
+            d="M103.775 409.852H168.358V1.79872L176.287 1.23122C180.648 0.919099 188.721 0.923539 194.226 1.24111L204.237 1.81851V446.529H103.775V409.852Z"
+          />
+          <path
+            d="M44.6806 304.806C0.689495 252.097 -10.9776 181.591 13.8031 118.21C27.0834 84.2432 51.4479 53.8401 82.2478 32.8016C97.4344 22.4281 117.431 13.0304 134.671 8.16489L140.452 6.53348V312.58H103.775V183.415H36.6289L37.1716 191.587C39.1199 220.923 47.4126 246.244 62.2952 268.299L66.3015 274.237V312.58H51.1686L44.6806 304.806ZM103.775 104.879C103.775 81.418 103.528 62.2227 103.227 62.2227C101.841 62.2227 87.5005 73.9471 81.1311 80.2879C68.5891 92.7736 59.3796 105.857 51.4745 122.42C47.8074 130.103 42.3821 144.641 42.3821 146.783C42.3821 147.242 54.3804 147.535 73.0787 147.535H103.775V104.879Z"
+          />
+          <path
+            d="M103.775 340.486H140.452V377.162H103.775V340.486Z"
+          />
+          <path
+            d="M232.143 340.486H268.022V377.162H232.143V340.486Z"
+          />
+        </svg></div></div>
+    <script>
+      new Vivus('my-svg', { duration: 50, animTimingFunction: Vivus.EASE }, ()=> {
+        const loadContainer = document.querySelector(".load-container");
+        const svg = document.getElementById('my-svg');
+
+        svg.classList.add('finished');
+        setTimeout(() => {
+          loadContainer.classList.add('fadeOut');
+          document.body.style.overflowY = 'auto';
+        }, 750);
+        setTimeout(() => {
+          loadContainer.classList.add("hidden");
+        }, 1000);
+        
+        
+      });
+    </script>
+    <a id="top"></a>
+    <!-- Start Mobile Menu -->
+    <div id="overlay">
+      <ul>
+        <li class="mobile-nav-item"><a href="#about">About</a></li>
+        <li class="mobile-nav-item"><a href="#skills">Skills</a></li>
+        <li class="mobile-nav-item"><a href="#portfolio">Portfolio</a></li>
+        <li class="mobile-nav-item"><a href="#blog">Blog</a></li>
+        <li class="mobile-nav-item"><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <!-- End Mobile Menu -->
+    <!-- Start Navigation Header -->
+    <div class="nav-wrap">
+      <div class="navbar">
+        <div class="logo">
+          <img src="/logo.svg" alt="" />
+        </div>
+        <div class="nav">
+          <div class="nav-links">
+            <ol>
+              <li class="nav-item">
+                <a href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a href="#blog">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact">Contact</a>
+              </li>
+            </ol>
+            <div class="btn resume"><a href="#">Resume</a></div>
+          </div>
+          <i class="menu fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+      </div>
+    </div>
+    <!-- End Navigation Header -->
     <main id="content">
-      <a id="top"></a>
       <div class="social-container">
         <div class="social-links-wrapper">
           <ul>
@@ -49,55 +149,14 @@
         </div>
       </div>
       <div class="email-container">
+        <div style="width: 100%;
+        margin: 0px auto;">
         <div class="email-link-wrapper">
           <a class="email-link" href="mailto:dubedeveloper@gmail.com"
             >dubedeveloper@gmail.com</a
           >
-        </div>
+        </div></div>
       </div>
-      <!-- Start Mobile Menu -->
-      <div id="overlay">
-        <ul>
-          <li class="nav-item"><a href="#about">About</a></li>
-          <li class="nav-item"><a href="#skills">Skills</a></li>
-          <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a href="#blog">Blog</a></li>
-          <li class="nav-item"><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <!-- End Mobile Menu -->
-      <!-- Start Navigation Header -->
-      <div class="nav-wrap">
-        <div class="navbar">
-          <div class="logo">
-            <img src="/logo.svg" alt="" />
-          </div>
-          <div class="nav">
-            <div class="nav-links">
-              <ol>
-                <li class="nav-item">
-                  <a href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#portfolio">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#blog">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#contact">Contact</a>
-                </li>
-              </ol>
-              <div class="btn resume"><a href="#">Resume</a></div>
-            </div>
-            <i class="menu fa-solid fa-bars" onclick="toggleMenu()"></i>
-          </div>
-        </div>
-      </div>
-      <!-- End Navigation Header -->
       <!-- Start Hero Section -->
       <section class="hero-section">
         <h1><span>Hi, my name is</span></h1>
@@ -107,7 +166,7 @@
           I'm an aspiring web developer based in Vermont, specializing in
           building beautiful, clean, front-end for websites and applications.
         </p>
-        <div class="btn">Get in touch</div>
+        <a href="#contact"><div class="btn">Get in touch</div></a>
       </section>
       <!-- End Hero Section -->
       <!-- Start About Section -->
@@ -118,23 +177,14 @@
           </div>
         </div>
         <div class="section-content">
-          <p>
-            Hello! I'm Anthony, an aspiring website developer based in Vermont
-            who enjoys building things that live on the web.
-          </p>
-          <p>
-            I develop beautiful, clean front-end for websites and apps using
-            modern development practices for maintainable and scalable code.
-          </p>
-          <p>Here are some of my favorite technologies:</p>
-          <ul class="stack">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JAVASCRIPT</li>
-            <li>PHP</li>
-            <li>NODE.JS</li>
-            <li>REACT</li>
-          </ul>
+          <div class="intro">
+            <p>
+              Hello! I'm Anthony, an aspiring website developer based in Vermont
+              who enjoys building things that live on the web. <br /><br />I
+              develop beautiful, clean front-end for websites and apps using
+              modern development practices for maintainable and scalable code.
+            </p>
+          </div>
           <div class="profile-wrap">
             <img class="profile" src="/profile_pic.png" alt="" />
           </div>
@@ -148,13 +198,98 @@
             <h4>Skills</h4>
           </div>
         </div>
+
+        <p>Here are some of my favorite technologies:</p>
+        <ul class="stack">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JAVASCRIPT</li>
+          <li>PHP</li>
+          <li>NODE.JS</li>
+          <li>REACT</li>
+        </ul>
       </section>
       <!-- End Skills Section -->
       <!-- Start Portfolio Section -->
-      <section id="portfolio" class="portfolio section">
+      <section id="portfolio" class="portfolio">
         <div class="title-wrap">
           <div class="title">
             <h4>Portfolio</h4>
+          </div>
+        </div>
+        <div class="intro">
+          <p>Here are some projects that I am working on:</p>
+        </div>
+        <div>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-header">
+                <i class="fa-solid fa-file-code color"></i>
+                <a href="https://github.com/ajddev/ants"
+                  ><i class="fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <h4 class="card-title">A.N.T.S.</h4>
+              <div class="card-description">
+                A.N.T.S. (Administrative Notification Tracking System) is an
+                issue tracker with a responsive admin dashboard built with
+                React.js and SASS/SCSS.
+              </div>
+              <div class="card-tags">#react #sass #bugTracker #admin</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-header">
+                <i class="fa-solid fa-file-code color"></i>
+                <a href="https://github.com/ajddev/cryptoquib"
+                  ><i class="fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <h4 class="card-title">Cryptoquib</h4>
+              <div class="card-description">
+                A substitution cipher game built with HTML, CSS, and VanillaJS.
+              </div>
+              <ul class="card-tags">
+                <li>#javascript</li>
+                <li>#html</li>
+                <li>#css</li>
+                <li>#cipher</li>
+                <li>#game</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-header">
+                <i class="fa-solid fa-file-code color"></i>
+                <a href="https://github.com/ajddev/tomtomcat"
+                  ><i class="fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <h4 class="card-title">TomTomCat</h4>
+              <div class="card-description">
+                A geofencing application for pets using the TomTom Maps API
+                built with React.js and SASS/SCSS.
+              </div>
+              <div class="card-tags">#geofencing #maps #react #sass</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-header">
+                <i class="fa-solid fa-file-code color"></i>
+                <a href="https://github.com/ajddev/eggflip"
+                  ><i class="fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <h4 class="card-title">EggFlip</h4>
+              <div class="card-description">
+                Breakfast recipe website built with React.js and SASS/SCSS.
+              </div>
+              <div class="card-tags">#breakfast #recipes #react #sass</div>
+            </div>
           </div>
         </div>
       </section>
@@ -166,6 +301,9 @@
             <h4>Blog</h4>
           </div>
         </div>
+        <div class="intro">
+          <p>Coming soon...</p>
+        </div>
       </section>
       <!-- End Blog Section -->
       <!-- Start Contact Section -->
@@ -175,6 +313,19 @@
             <h4>Contact</h4>
           </div>
         </div>
+        <div class="intro">
+          <p>My inbox is always open. Whether for a potential project or just to say hi, I'll try my best to answer your email!</p>
+        </div>
+        <form class="contact-form" target="_blank" action="https://formsubmit.co/dubedeveloper@email.com" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" name="message" rows="10" required></textarea>
+          </div>
+          <button type="submit" class="btn">Submit Form</button>
+        </form>
       </section>
       <!-- End Contact Section -->
       <a href="#top"><div class="btn top-btn">&#8593;</div></a>
